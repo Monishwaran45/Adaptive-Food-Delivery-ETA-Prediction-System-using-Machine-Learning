@@ -1,0 +1,39 @@
+[project]
+name = "eta"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "catboost==1.2.7",
+    "category-encoders==2.6.4",
+    "feature-engine==1.8.1",
+    "geopy==2.4.1",
+    "haversine==2.8.1",
+    "ipykernel==6.29.5",
+    "joblib==1.4.2",
+    "jupyter==1.1.1",
+    "lightgbm==4.5.0",
+    "matplotlib==3.9.2",
+    "networkx==3.3",
+    "notebook==7.2.2",
+    "numpy==1.26.4",
+    "openpyxl==3.1.5",
+    "optuna==4.0.0",
+    "osmnx==1.9.4",
+    "pandas==2.2.2",
+    "pickle-mixin==1.0.2",
+    "plotly==5.24.1",
+    "python-dateutil==2.9.0.post0",
+    "pyyaml==6.0.2",
+    "requests==2.32.3",
+    "scikit-learn==1.5.1",
+    "scipy==1.13.1",
+    "seaborn==0.13.2",
+    "shap==0.46.0",
+    "statsmodels==0.14.2",
+    "streamlit==1.38.0",
+    "tqdm==4.66.5",
+    "xgboost==2.1.1",
+    "xlrd==2.0.1",
+]
