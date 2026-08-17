@@ -9,3 +9,4 @@ wheels/
 # Virtual environments
 .venv
 .oxcode-memory/
+models/random_forest_eta.pkl
