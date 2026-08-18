@@ -1,4 +1,4 @@
-# 🚀 Adaptive Food Delivery ETA Prediction & Delay Risk Intelligence System
+# Adaptive Food Delivery ETA Prediction & Delay Risk Intelligence System
 
 [![Python Version](https://img.shields.io/badge/Python-3.11%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Machine Learning](https://img.shields.io/badge/ML-XGBoost%20%7C%20Scikit--Learn%20%7C%20LightGBM-orange.svg?logo=scikitlearn&logoColor=white)](https://xgboost.readthedocs.io/)
@@ -10,7 +10,7 @@ An enterprise-grade, explainable machine learning system for **Dynamic Multi-Sta
 
 ---
 
-## 📌 Table of Contents
+##  Table of Contents
 - [Executive Overview](#-executive-overview)
 - [Key Features & Highlights](#-key-features--highlights)
 - [System Architecture](#-system-architecture)
@@ -29,7 +29,7 @@ An enterprise-grade, explainable machine learning system for **Dynamic Multi-Sta
 
 ---
 
-## 📖 Executive Overview
+##  Executive Overview
 
 Accurate ETA prediction in on-demand food delivery is inherently challenging due to compounding friction points across four distinct operational phases:
 1. **Order-to-Assignment (O2A)**: Rider dispatch latency, active rider workload, and fleet density.
@@ -47,18 +47,18 @@ This repository implements an **Adaptive Multi-Stage Machine Learning Framework*
 
 ---
 
-## ✨ Key Features & Highlights
+##  Key Features & Highlights
 
-- 🎯 **High Precision ETA Engine**: Achieves **$R^2 = 0.8242$**, **$\text{MAE} = 3.13\text{ min}$**, and **$\text{RMSE} = 3.94\text{ min}$** on real-world delivery test distributions.
-- ⚡ **Multi-Stage Decomposition (O2A + FM + WT + LM)**: Breaks end-to-end delivery into granular physical stages for pinpoint bottleneck identification.
-- 🚦 **Proactive Delay Risk Intelligence**: Classifies order delivery risk with **$86.24\%$ Accuracy** and **$86.42\%$ F1-Score** using class-balanced multi-class gradient boosting.
-- 🔍 **Explainable AI (SHAP)**: Fully transparent decision making — quantifies that **First Mile (FM)** drives **$47.08\%$** and **Order-to-Assignment (O2A)** drives **$25.29\%$** of ETA variance.
-- 🛡️ **Conformal Uncertainty Intervals**: Produces dynamic $(\text{ETA}_{\text{lower}}, \text{ETA}_{\text{upper}})$ prediction bounds with calibrated $95\%$ empirical test coverage.
-- 📦 **End-to-End Pipeline & Artifacts**: Pre-packaged scikit-learn preprocessing pipelines, joblib serialization, and Git LFS model management.
+-  **High Precision ETA Engine**: Achieves **$R^2 = 0.8242$**, **$\text{MAE} = 3.13\text{ min}$**, and **$\text{RMSE} = 3.94\text{ min}$** on real-world delivery test distributions.
+-  **Multi-Stage Decomposition (O2A + FM + WT + LM)**: Breaks end-to-end delivery into granular physical stages for pinpoint bottleneck identification.
+-  **Proactive Delay Risk Intelligence**: Classifies order delivery risk with **$86.24\%$ Accuracy** and **$86.42\%$ F1-Score** using class-balanced multi-class gradient boosting.
+-  **Explainable AI (SHAP)**: Fully transparent decision making — quantifies that **First Mile (FM)** drives **$47.08\%$** and **Order-to-Assignment (O2A)** drives **$25.29\%$** of ETA variance.
+-  **Conformal Uncertainty Intervals**: Produces dynamic $(\text{ETA}_{\text{lower}}, \text{ETA}_{\text{upper}})$ prediction bounds with calibrated $95\%$ empirical test coverage.
+-  **End-to-End Pipeline & Artifacts**: Pre-packaged scikit-learn preprocessing pipelines, joblib serialization, and Git LFS model management.
 
 ---
 
-## 🏛️ System Architecture
+##  System Architecture
 
 ```mermaid
 flowchart TD
@@ -97,7 +97,7 @@ flowchart TD
 
 ---
 
-## 🧩 Multi-Stage ETA Decomposition
+##  Multi-Stage ETA Decomposition
 
 Total food delivery duration is structured as a cumulative sum of four continuous operational stages:
 
@@ -122,7 +122,7 @@ $$\text{ETA}_{\text{Total}} = T_{\text{O2A}} + T_{\text{FM}} + T_{\text{WT}} + T
 
 ---
 
-## 📊 Project Evolution & Benchmarks
+## Project Evolution & Benchmarks
 
 The project evolved through three successive generations of experimentation and architectural enhancements:
 
@@ -167,7 +167,7 @@ Target partition: **Low Risk** ($\le 21\text{ min}$), **Medium Risk** ($21-29\te
 
 ---
 
-## 🔍 Explainable AI (SHAP) Insights
+##  Explainable AI (SHAP) Insights
 
 Using `shap.TreeExplainer` on the fused model representations ($N=45,493$ deliveries, $35$ features), we computed global, local, and stage-aggregated SHapley attributions:
 
@@ -179,10 +179,10 @@ Using `shap.TreeExplainer` on the fused model representations ($N=45,493$ delive
 ├────────────────────────┬──────────────────────┬─────────────┤
 │ Delivery Stage         │ Average |SHAP| Score │ Share (%)   │
 ├────────────────────────┼──────────────────────┼─────────────┤
-│ 🚗 First Mile (FM)     │ 3.6604               │ 47.08%      │
-│ 📱 Order-to-Assign (O2A)│ 1.9663               │ 25.29%      │
-│ 🍳 Wait Time (WT)      │ 1.1370               │ 14.62%      │
-│ 📦 Last Mile (LM)      │ 1.0118               │ 13.01%      │
+│ First Mile (FM)     │ 3.6604               │ 47.08%      │
+│ Order-to-Assign (O2A)│ 1.9663               │ 25.29%      │
+│ Wait Time (WT)      │ 1.1370               │ 14.62%      │
+│ Last Mile (LM)      │ 1.0118               │ 13.01%      │
 └────────────────────────┴──────────────────────┴─────────────┘
 ```
 
@@ -201,7 +201,7 @@ pie title Stage Contribution to Delivery Time (SHAP)
 
 ---
 
-## 🛡️ Uncertainty & Confidence Intervals
+##  Uncertainty & Confidence Intervals
 
 Point predictions often fail during peak delivery uncertainty. Using **Conformal Residual Calibration** ($1-\alpha = 0.95$):
 - Calibrated Residual Quantile: **$q_{0.95} = 6.84\text{ min}$**
@@ -211,7 +211,7 @@ $$\text{Confidence Interval} = \left[ \widehat{\text{ETA}} - q_{0.95},\, \wideha
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```text
 ├── dataset/                                # Dataset directory
@@ -267,7 +267,7 @@ $$\text{Confidence Interval} = \left[ \widehat{\text{ETA}} - q_{0.95},\, \wideha
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -297,7 +297,7 @@ uv pip install -r requirements.txt
 
 ---
 
-## 🚀 Quickstart & Inference Guide
+## Quickstart & Inference Guide
 
 Run production inference using the serialized Phase 3 artifacts:
 
@@ -328,10 +328,10 @@ predicted_risk_class = risk_classifier.predict(sample)[0]
 risk_probabilities = risk_classifier.predict_proba(sample)[0]
 
 # 5. Output Results
-print(f"📦 Predicted Delivery ETA : {predicted_eta:.1f} minutes")
-print(f"🔒 95% Confidence Interval: ({lower_bound:.1f} min - {upper_bound:.1f} min)")
-print(f"⚠️  Delay Risk Status      : {risk_labels[predicted_risk_class]}")
-print(f"📊 Class Probabilities    : Low: {risk_probabilities[0]:.2f}, Med: {risk_probabilities[1]:.2f}, High: {risk_probabilities[2]:.2f}")
+print(f" Predicted Delivery ETA : {predicted_eta:.1f} minutes")
+print(f" 95% Confidence Interval: ({lower_bound:.1f} min - {upper_bound:.1f} min)")
+print(f"  Delay Risk Status      : {risk_labels[predicted_risk_class]}")
+print(f" Class Probabilities    : Low: {risk_probabilities[0]:.2f}, Med: {risk_probabilities[1]:.2f}, High: {risk_probabilities[2]:.2f}")
 ```
 
 ---
