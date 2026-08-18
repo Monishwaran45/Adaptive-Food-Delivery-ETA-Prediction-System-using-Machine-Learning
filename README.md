@@ -1,4 +1,4 @@
-# 🚀 Adaptive Food Delivery ETA Prediction & Delay Risk Intelligence System
+#  Adaptive Food Delivery ETA Prediction & Delay Risk Intelligence System
 
 [![Python Version](https://img.shields.io/badge/Python-3.11%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Machine Learning](https://img.shields.io/badge/ML-XGBoost%20%7C%20Scikit--Learn%20%7C%20LightGBM-orange.svg?logo=scikitlearn&logoColor=white)](https://xgboost.readthedocs.io/)
